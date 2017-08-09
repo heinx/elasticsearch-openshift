@@ -14,5 +14,8 @@ ENV NUMBER_OF_MASTERS=1
 # Network interface to bind to
 ENV NETWORK_HOST=0.0.0.0
 
+# Publish host address. An elasticsearch node will publish this address in discovery responses, e.g. /_cat/nodes, /_cat/master, etc. 
+ENV PUBLISH_HOST=
+
 # List of node addresses in cluster for zen discovery
 ENV UNICAST_HOSTS "127.0.0.1, [::1]"
