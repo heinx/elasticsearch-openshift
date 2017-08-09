@@ -1,7 +1,9 @@
 cluster:
   name: ${CLUSTER_NAME}
 
-network.host: ${NETWORK_HOST}
+network:
+  host: ${NETWORK_HOST}
+  publish_host: ${PUBLISH_HOST}
 
 discovery:
   zen:
