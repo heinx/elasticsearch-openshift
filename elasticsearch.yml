@@ -1,0 +1,11 @@
+cluster:
+  name: ${CLUSTER_NAME}
+
+network.host: ${NETWORK_HOST}
+
+discovery:
+  zen:
+    minimum_master_nodes: ${NUMBER_OF_MASTERS}
+    ping:
+      unicast:
+        hosts: ${UNICAST_HOSTS}
