@@ -1,0 +1,18 @@
+Environment properties and their defaults:
+
+# memory used by elasticsearch
+ENV ES_JAVA_OPTS "-Xms512m -Xmx512m"
+
+# cluster name
+ENV CLUSTER_NAME=elasticsearch5-openshift
+
+# Minimum number of master nodes when forming a cluster or updating cluster state.
+Always set this number to a number more than half of the number of nodes. E.g. if you have 3 nodes, set it to 2.
+See https://www.elastic.co/guide/en/elasticsearch/reference/current/important-settings.html#minimum_master_nodes for details
+ENV NUMBER_OF_MASTERS=1
+
+# Network interface to bind to
+ENV NETWORK_HOST=0.0.0.0
+
+# List of node addresses in cluster for zen discovery
+ENV UNICAST_HOSTS "127.0.0.1, [::1]"
