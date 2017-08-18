@@ -1,4 +1,4 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.5.1
+FROM elasticsearch:2.4.6
 
 USER root
 
@@ -6,9 +6,7 @@ RUN chgrp -R 0 /usr/share/elasticsearch && \
     chmod -R g+rw /usr/share/elasticsearch && \
     find /usr/share/elasticsearch -type d -exec chmod g+x {} + && \
     ulimit -n 65536 && \
-    ulimit -u 2048 && \
-    echo "*  -  nofile  65536" >> /etc/security/limits.conf && \
-    rm -fr /usr/share/elasticsearch/plugins/x-pack
+    echo "*  -  nofile  65536" >> /etc/security/limits.conf
 
 COPY elasticsearch.yml /usr/share/elasticsearch/config
 
