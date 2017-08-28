@@ -1,4 +1,13 @@
-Environment properties and their defaults:
+## Setup on host nodes, e.g. machines running openshift
+# See: https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-cli-run-prod-mode
+# and: https://www.elastic.co/guide/en/elasticsearch/reference/current/_maximum_map_count_check.html
+
+$ grep vm.max_map_count /etc/sysctl.conf
+vm.max_map_count=262144
+# During runtime 
+sysctl -w vm.max_map_count=262144
+
+## Environment properties and their defaults:
 
 # memory used by elasticsearch
 ENV ES_JAVA_OPTS "-Xms512m -Xmx512m"
